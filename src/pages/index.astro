@@ -15,7 +15,17 @@
 		<ul>
 			<li>Firebase Installed</li>
 			<li>Firebase-admin Installed</li>
-			<li>Vercel Adapter Installed, Starting With Server Side Rendering</li>
+			<li>
+				Vercel Adapter Installed, Starting With Server Side Rendering
+			</li>
+			<li>Firebase Client Auth</li>
 		</ul>
 	</body>
+	<script>
+		import { app } from "../firebase/client";
+		import { getAuth } from "firebase/auth";
+
+		const auth = getAuth(app);
+		console.log(auth);
+	</script>
 </html>
