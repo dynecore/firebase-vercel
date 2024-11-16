@@ -1,5 +1,12 @@
 ---
+import { getAuth } from "firebase-admin/auth"
+import { app } from "../firebase/server.js"
 
+
+const auth = getAuth(app)
+console.log('##### Server side Firebase-admin Auth #####')
+console.log(auth)
+//console.log(import.meta.env.FIREBASE_PROJECT_ID)
 ---
 
 <html lang="en">
@@ -13,21 +20,19 @@
 	<body>
 		<h1>Firebase Astro Demo in Vercel</h1>
 		<ul>
-			<li>Firebase Installed</li>
-			<li>Firebase-admin Installed</li>
-			<li>
-				Vercel Adapter Installed, Starting With Server Side Rendering
-			</li>
-			<li>Firebase Client Auth</li>
-			<li>Just Firebase, Firebase admin-removed</li>
-			<li>fix app io</li>
+			<li>Firebase Running</li>
+			<li>Reinstalling Firebase-Admin and try to display it...</li>
 		</ul>
 	</body>
+
 	<script>
 		import { app } from "../firebase/client.js";
 		import { getAuth } from "firebase/auth";
 
 		const auth = getAuth(app);
 		console.log(auth);
+
+		//const serverAuth = JSON.parse({JSON.stringify(safeAuthData)});
+		
 	</script>
 </html>
